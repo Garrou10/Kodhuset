@@ -1,0 +1,11 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+@{ Layout = null; }
+<!doctype html>
+<html lang="sv">
+<head><meta charset="utf-8"><title>@Model.Name</title></head>
+<body>
+  <h1>@Model.Name</h1>
+  <p>Kund: @Model.Value("kund")</p>
+  @Model.Value("beskrivning")
+</body>
+</html>
