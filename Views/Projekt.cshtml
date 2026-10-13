@@ -4,6 +4,23 @@
 <html lang="sv">
 <head><meta charset="utf-8"><title>@Model.Name</title></head>
 <body>
+  @{ var rot = Model.Root(); }
+  <nav aria-label="Huvudmeny">
+    <a href="@rot.Url()">@rot.Name</a>
+    @foreach (var sida in rot.Children().Where(x => x.ContentType.Alias == "sida"))
+    {
+      <a href="@sida.Url()">@sida.Name</a>
+    }
+  </nav>
+
+  <nav aria-label="Brödsmulor">
+    @foreach (var a in Model.AncestorsOrSelf().Reverse())
+    {
+      <a href="@a.Url()">@a.Name</a>
+      if (a.Id != Model.Id) { <span> / </span> }
+    }
+  </nav>
+
   <h1>@Model.Name</h1>
   <p>Kund: @Model.Value("kund")</p>
   @Model.Value("beskrivning")
