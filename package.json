@@ -1,0 +1,25 @@
+{
+  "name": "kodhuset",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch Styles/main.scss:wwwroot/css/site.css",
+    "bygg": "sass --style=compressed --no-source-map Styles/main.scss wwwroot/css/site.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Garrou10/Kodhuset.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Garrou10/Kodhuset/issues"
+  },
+  "homepage": "https://github.com/Garrou10/Kodhuset#readme",
+  "devDependencies": {
+    "sass": "^1.105.2"
+  }
+}
